@@ -99,7 +99,7 @@ Each step was verified on the live host after it was applied.
 | Odoo config | Host config not mounted; master password `admin` | Config mounted read-only with a strong random `admin_passwd` and `dbfilter = ^erp2023$` | Database backup with `admin` returns `AccessDenied`; `get_list` returns only the production database |
 | SSH | Root password login enabled (`50-cloud-init.conf`) | `PasswordAuthentication no`, `KbdInteractiveAuthentication no`, `PermitRootLogin prohibit-password`; root password rotated (DigitalOcean console only) | Key login works; password login returns `Permission denied (publickey)` |
 | Compose | Obsolete `version:` key; DB password hard-coded | Secrets moved to a mode-`600` `.env`; `5432` never published | `docker compose config -q` passes |
-| Reverse proxy / TLS (03:09 UTC) | Odoo served directly over plain HTTP on published port 8069 | nginx 1.27 container in front of Odoo with a Let's Encrypt certificate (sslip.io hostname), TLS 1.2/1.3, HSTS, gzip, 1-hour cache for `/*/static/`; custom `full.css` (previously `docker cp`'d, lost on container recreation) restored as a read-only bind mount; Odoo no longer published (`proxy_mode = True`); ports 80 and 8069 answer with `301` to HTTPS (8069 kept for a transition period); `/web/database/{backup,restore,drop,duplicate,create,change_password}` return `403`; renewal via cron twice daily | External checks: HTTPS `200` with a valid chain; `:8069` and `:80` return `301`; `webclient/js` 1.17 MB → 506 KB gzip; static `X-Cache: HIT`; database backup `403`; `certbot renew --dry-run` succeeds |
+| Reverse proxy / TLS (03:09 UTC) | Odoo served directly over plain HTTP on published port 8069 | nginx 1.27 container in front of Odoo with a Let's Encrypt certificate (sslip.io hostname), TLS 1.2/1.3, HSTS, gzip, 1-hour cache for `/*/static/`; custom `full.css` (previously `docker cp`'d, lost on container recreation) restored as a read-only bind mount; Odoo no longer published (`proxy_mode = True`); port 80 answers with `301` to HTTPS; port 8069 briefly redirected to HTTPS, then closed to the public (03:3x UTC); `/web/database/{backup,restore,drop,duplicate,create,change_password}` return `403`; renewal via cron twice daily | External checks: HTTPS `200` with a valid chain; `:8069` and `:80` return `301`; `webclient/js` 1.17 MB → 506 KB gzip; static `X-Cache: HIT`; database backup `403`; `certbot renew --dry-run` succeeds |
 
 **Impact of remediation:** Odoo was unavailable from 02:48:13 to 02:50:21 UTC, plus a 4-second restart at 02:51 and about 4 seconds at 03:09 for the proxy switch. Existing web sessions were invalidated.
 
@@ -111,7 +111,7 @@ Each step was verified on the live host after it was applied.
 ## Still open
 
 1. **Data exposure assessment:** the attacker had PostgreSQL superuser access from 2026-02-25 to 2026-09-17. Treat business data and Odoo user password hashes as exposed. Reset Odoo user passwords and inform the data owner.
-2. **Transition:** after users have moved to the HTTPS address, remove the `8069` port from the nginx service. Optionally move from the sslip.io hostname to the client's own domain.
+2. **Domain:** optionally move from the sslip.io hostname to the client's own domain.
 3. **Monitoring:** CPU alert on the droplet (for example, above 70% for 10 minutes) to catch a recurrence within hours.
 4. **Performance:** enable Odoo workers, `VACUUM ANALYZE`, and add indexes / `pg_trgm` for product and sales-line searches. Add swap.
 5. **Lifecycle:** upgrade off end-of-life Odoo 7, PostgreSQL 9.6 and Ubuntu 24.10.
