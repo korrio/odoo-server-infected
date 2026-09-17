@@ -2,6 +2,7 @@
 
 Incident report and forensic evidence from an Odoo 7 + PostgreSQL 9.6 Docker host. The client reported that Odoo pages were very slow. The cause was a cryptominer running inside the Postgres container, not user traffic.
 
+- **Status:** **Contained and remediated 2026-09-17 02:51 UTC** (see [Remediation performed](#remediation-performed-2026-09-17))
 - **Collected:** 2026-09-17 02:18 UTC (live system, before any remediation)
 - **Host:** DigitalOcean droplet, 2 vCPU / 4 GB RAM / no swap, Ubuntu 24.10, Docker
 - **Stack:** `akolpakov/odoo:7` (OpenERP 7.0-20170329) + `postgres:9.6`
@@ -29,7 +30,11 @@ Incident report and forensic evidence from an Odoo 7 + PostgreSQL 9.6 Docker hos
 | 2026-05-01 22:57:53 | Loader dropped: `/var/tmp/.wpmocdevxz/xbbqewcner` + lock `/var/tmp/.lckktfdd`, 2 s after start | `docker/odoo-db_tmp_listing.txt` |
 | 2026-05-03 onward | A new miner spawns every 1–2 days, then daily; 133 dead (zombie) miner processes accumulate | `process/zombies.txt` |
 | 2026-09-17 00:30:36 | Current miner dropped: `/var/tmp/.ytagwyaegn/mgqipgiuvp`, connected to C2/pool | `process/`, `network/odoo-db_ss.txt` |
+| 2026-08-09 15:39:46 | Remote `POST /web/database/duplicate` from `111.90.x.x` using the default master password; **failed** (`TypeError: duplicate() got an unexpected keyword argument 'new_name'`, a scanner built for newer Odoo). The only database-manager action in the log | `logs/odoo_container_json.log.gz` |
 | 2026-09-17 02:18 | Evidence collected | `collected_at_utc.txt` |
+| 2026-09-17 02:46 | Verified database backups taken | none (server only) |
+| 2026-09-17 02:48–02:50 | Persistence removed, containers recreated, credentials rotated (Odoo outage about 2 min) | none (server only) |
+| 2026-09-17 02:51 | SSH hardened, C2 blocked, remediation verified | none (server only) |
 
 ## Indicators of compromise
 
@@ -71,41 +76,44 @@ Evidence: `system/`, `logs/odoo_container_json.log.gz`
   - 84% of requests are `POST /web/dataset/call_kw`
   - 121 × HTTP 500
 - **Internet exposure of Odoo:** port 8069 is reachable from anywhere, even though UFW has a single-IP allow rule, because Docker-published ports skip UFW. Scanners probe `/..%2F..%2Fetc%2Fpasswd`, `/HNAP1`, `/cgi-bin/*`, and `/web/database/get_list` (146 hits, database manager exposed).
+- **Odoo master password was the default:** the host's `openerp-server.conf` was **never mounted** into the container. Odoo ran with the image's built-in config, where `admin_passwd` is unset, so the master password was `admin`. Anyone on the internet could back up, duplicate or drop the database through the database manager.
 
 Secondary issues (not the root cause):
-- `openerp-server.conf` has inline `# comments` on `workers`/`limit_*` lines, and Odoo runs as a single threaded process.
+- Odoo runs as a single threaded process. The `workers`/`limit_*` tuning in the host's `openerp-server.conf` never applied, because that file was not mounted.
+- `akolpakov/odoo:7`'s entrypoint passes `--db_password` on the command line, so the DB password was visible to any `ps` on the host.
 - No reverse proxy: `/web/webclient/js` (1.17 MB) is served uncompressed.
 - `sale_order_line` has never been autovacuumed. There are heavy sequential scans on `sale_order_line`, `product_product` and `product_template`.
 - End-of-life software: Odoo 7, PostgreSQL 9.6, Ubuntu 24.10.
 
-## Remediation
+## Remediation performed (2026-09-17)
 
-1. **Backup:** `pg_dump` the business database and copy `pg_data/` somewhere offline.
-2. **Remove persistence:**
-   - Delete both `*_preload_libraries` lines from `pg_data/postgresql.conf`.
-   - Delete `pg_data/gcmanager-1.so`.
-   - Run `docker compose down && docker compose up -d`. Recreating the container wipes `/var/tmp`.
-3. **Verify:** `show shared_preload_libraries` is empty, no `/var/tmp/.*` executables exist, no connection to `185.10.68.220`, CPU is back to idle.
-4. **Hunt for more:**
-   - unexpected roles
-   - functions in C or untrusted languages (none found at collection: `postgres/queries.txt`)
-   - modified `pg_hba.conf`
-   - host-level persistence (none found at collection)
-5. **Rotate credentials:**
-   - Postgres password; Odoo must connect as a **non-superuser**
-   - Odoo admin + master password (`list_db = False`)
-   - Root/SSH password (password auth is enabled via `50-cloud-init.conf`); switch to key-only login
-6. **Network:**
-   - Never publish 5432.
-   - Bind Odoo to `127.0.0.1:8069` behind nginx + TLS, or filter in the `DOCKER-USER` iptables chain.
-   - Block egress to `185.10.68.220`.
-7. **Monitoring:** CPU alert on the droplet so a miner is caught in hours, not months.
-8. **Performance afterwards:**
-   - Fix the Odoo config so `workers` apply.
-   - nginx gzip + static caching.
-   - `VACUUM ANALYZE`, and add indexes / `pg_trgm` for product and sales-line searches.
-   - Add swap.
-   - Plan an upgrade off EOL versions.
+Each step was verified on the live host after it was applied.
+
+| Area | Before | After | Verification |
+|---|---|---|---|
+| Backup | none | `pg_dump -Fc` of all databases + globals, `postgresql.conf` and compose file copied | `pg_restore -l` lists 365 table-data entries |
+| Persistence | `gcmanager-1.so` preloaded by `postgresql.conf` | Library moved to a root-only quarantine dir (mode `000`); both preload lines commented out; containers recreated (fresh `/var/tmp`) | `show shared_preload_libraries` is empty; no `/var/tmp` artifacts; 0 zombie processes; CPU 100% idle, 3 GB RAM free |
+| C2 | Outbound connection allowed | `185.10.68.220` dropped in `DOCKER-USER` and `OUTPUT`, persisted by a systemd oneshot unit started after `docker.service` | `iptables -S` shows the rules |
+| Postgres credentials | `odoo`/`odoo`, app role was superuser | New random passwords for `odoo` and `postgres`; `odoo` is `NOSUPERUSER CREATEDB` (still owns its database) | Old password rejected (`password authentication failed`); Odoo connects |
+| DB password exposure | Passed as `--db_password` argv | Stored in the Odoo config file (mode `600`, owned by the Odoo uid); env var removed from the Odoo service, so the entrypoint no longer adds it to argv | `ps` shows no `db_password` |
+| Odoo config | Host config not mounted; master password `admin` | Config mounted read-only with a strong random `admin_passwd` and `dbfilter = ^erp2023$` | Database backup with `admin` returns `AccessDenied`; `get_list` returns only the production database |
+| SSH | Root password login enabled (`50-cloud-init.conf`) | `PasswordAuthentication no`, `KbdInteractiveAuthentication no`, `PermitRootLogin prohibit-password`; root password rotated (DigitalOcean console only) | Key login works; password login returns `Permission denied (publickey)` |
+| Compose | Obsolete `version:` key; DB password hard-coded | Secrets moved to a mode-`600` `.env`; `5432` never published | `docker compose config -q` passes |
+
+**Impact of remediation:** Odoo was unavailable from 02:48:13 to 02:50:21 UTC, plus a 4-second restart at 02:51. Existing web sessions were invalidated.
+
+**Lessons:**
+- Closing the port on 2026-05-01 hid the symptom of the intrusion but left its persistence in `PGDATA`. After a database compromise, always check the preload settings and the data directory itself.
+- Docker-published ports bypass UFW. Firewall them in `DOCKER-USER` or bind them to `127.0.0.1`.
+- Confirm that a config file is actually mounted before relying on it (`docker exec <container> cat <path>`).
+
+## Still open
+
+1. **Data exposure assessment:** the attacker had PostgreSQL superuser access from 2026-02-25 to 2026-09-17. Treat business data and Odoo user password hashes as exposed. Reset Odoo user passwords and inform the data owner.
+2. **Reverse proxy + TLS:** put Odoo behind nginx with HTTPS on a domain and stop publishing 8069 directly (also adds gzip and static caching).
+3. **Monitoring:** CPU alert on the droplet (for example, above 70% for 10 minutes) to catch a recurrence within hours.
+4. **Performance:** enable Odoo workers, `VACUUM ANALYZE`, and add indexes / `pg_trgm` for product and sales-line searches. Add swap.
+5. **Lifecycle:** upgrade off end-of-life Odoo 7, PostgreSQL 9.6 and Ubuntu 24.10.
 
 ## Repository layout
 
