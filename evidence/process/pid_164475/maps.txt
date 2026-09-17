@@ -1,0 +1,14 @@
+00400000-00401000 r--p 00000000 00:3b 759808                             /var/tmp/.wpmocdevxz/xbbqewcner
+00401000-0048f000 r-xp 00001000 00:3b 759808                             /var/tmp/.wpmocdevxz/xbbqewcner
+0048f000-004c8000 r--p 0008f000 00:3b 759808                             /var/tmp/.wpmocdevxz/xbbqewcner
+004c8000-004ca000 rw-p 000c7000 00:3b 759808                             /var/tmp/.wpmocdevxz/xbbqewcner
+004ca000-004cf000 rw-p 00000000 00:00 0 
+2a4e4000-2a58c000 rw-p 00000000 00:00 0                                  [heap]
+7ae6e7c6c000-7ae6f974f000 rw-p 00000000 00:00 0 
+7ae6f974f000-7ae6f99e7000 rw-p 00000000 00:00 0 
+7ae6f9b8e000-7ae6f9b8f000 ---p 00000000 00:00 0 
+7ae6f9b8f000-7ae6f9ba4000 rw-p 00000000 00:00 0 
+7ae6f9ba4000-7ae6f9ba8000 r--p 00000000 00:00 0                          [vvar]
+7ae6f9ba8000-7ae6f9baa000 r-xp 00000000 00:00 0                          [vdso]
+7ffe6eca0000-7ffe6ecc1000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

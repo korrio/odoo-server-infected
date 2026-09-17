@@ -1,0 +1,137 @@
+2026-05-01T22:57:51.018148179Z 
+2026-05-01T22:57:51.018175488Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+2026-05-01T22:57:51.018179498Z 
+2026-05-01T22:57:51.103084931Z LOG:  database system was shut down at 2026-05-01 22:57:06 UTC
+2026-05-01T22:57:51.109690705Z LOG:  MultiXact member wraparound protections are now enabled
+2026-05-01T22:57:51.114062617Z LOG:  autovacuum launcher started
+2026-05-01T22:57:51.114074637Z LOG:  database system is ready to accept connections
+2026-05-01T22:58:53.998038599Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-05-01T22:58:53.998076968Z STATEMENT:  SELECT *
+2026-05-01T22:58:53.998082108Z 	                                   FROM ir_cron
+2026-05-01T22:58:53.998087038Z 	                                   WHERE numbercall != 0
+2026-05-01T22:58:53.998091208Z 	                                      AND active
+2026-05-01T22:58:53.998095288Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-05-01T22:58:53.998099688Z 	                                      AND id=3
+2026-05-01T22:58:53.998109458Z 	                                   FOR UPDATE NOWAIT
+2026-05-09T07:16:37.740333581Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-05-09T07:16:37.740414300Z STATEMENT:  SELECT *
+2026-05-09T07:16:37.740421150Z 	                                   FROM ir_cron
+2026-05-09T07:16:37.740426540Z 	                                   WHERE numbercall != 0
+2026-05-09T07:16:37.740431380Z 	                                      AND active
+2026-05-09T07:16:37.740436230Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-05-09T07:16:37.740440910Z 	                                      AND id=1
+2026-05-09T07:16:37.740445440Z 	                                   FOR UPDATE NOWAIT
+2026-05-15T18:41:42.198821934Z ERROR:  could not obtain lock on row in relation "res_users"
+2026-05-15T18:41:42.199115612Z STATEMENT:  SELECT id FROM res_users WHERE id=4 FOR NO KEY UPDATE NOWAIT
+2026-05-27T02:46:32.445950826Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-05-27T02:46:32.446304923Z STATEMENT:  SELECT *
+2026-05-27T02:46:32.446315963Z 	                                   FROM ir_cron
+2026-05-27T02:46:32.446321963Z 	                                   WHERE numbercall != 0
+2026-05-27T02:46:32.446326803Z 	                                      AND active
+2026-05-27T02:46:32.446331223Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-05-27T02:46:32.446335772Z 	                                      AND id=1
+2026-05-27T02:46:32.446340223Z 	                                   FOR UPDATE NOWAIT
+2026-05-31T22:46:49.680116995Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-05-31T22:46:49.680530751Z STATEMENT:  SELECT *
+2026-05-31T22:46:49.680538782Z 	                                   FROM ir_cron
+2026-05-31T22:46:49.680544111Z 	                                   WHERE numbercall != 0
+2026-05-31T22:46:49.680548491Z 	                                      AND active
+2026-05-31T22:46:49.680552482Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-05-31T22:46:49.680556622Z 	                                      AND id=1
+2026-05-31T22:46:49.680560662Z 	                                   FOR UPDATE NOWAIT
+2026-06-02T03:16:37.316926262Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-06-02T03:16:37.316977041Z STATEMENT:  SELECT *
+2026-06-02T03:16:37.316983971Z 	                                   FROM ir_cron
+2026-06-02T03:16:37.316990541Z 	                                   WHERE numbercall != 0
+2026-06-02T03:16:37.316996291Z 	                                      AND active
+2026-06-02T03:16:37.317002061Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-06-02T03:16:37.317007831Z 	                                      AND id=1
+2026-06-02T03:16:37.317013551Z 	                                   FOR UPDATE NOWAIT
+2026-06-05T16:47:00.157292206Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-06-05T16:47:00.157733576Z STATEMENT:  SELECT *
+2026-06-05T16:47:00.157745036Z 	                                   FROM ir_cron
+2026-06-05T16:47:00.157750525Z 	                                   WHERE numbercall != 0
+2026-06-05T16:47:00.157755005Z 	                                      AND active
+2026-06-05T16:47:00.157759256Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-06-05T16:47:00.157763916Z 	                                      AND id=1
+2026-06-05T16:47:00.157768196Z 	                                   FOR UPDATE NOWAIT
+2026-06-14T01:16:34.237529111Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-06-14T01:16:34.237912548Z STATEMENT:  SELECT *
+2026-06-14T01:16:34.237926468Z 	                                   FROM ir_cron
+2026-06-14T01:16:34.237931878Z 	                                   WHERE numbercall != 0
+2026-06-14T01:16:34.237936318Z 	                                      AND active
+2026-06-14T01:16:34.237940738Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-06-14T01:16:34.237944978Z 	                                      AND id=1
+2026-06-14T01:16:34.237949418Z 	                                   FOR UPDATE NOWAIT
+2026-07-03T03:16:24.223177537Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-07-03T03:16:24.223585562Z STATEMENT:  SELECT *
+2026-07-03T03:16:24.223596172Z 	                                   FROM ir_cron
+2026-07-03T03:16:24.223600182Z 	                                   WHERE numbercall != 0
+2026-07-03T03:16:24.223603242Z 	                                      AND active
+2026-07-03T03:16:24.223605912Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-07-03T03:16:24.223608672Z 	                                      AND id=1
+2026-07-03T03:16:24.223611322Z 	                                   FOR UPDATE NOWAIT
+2026-07-07T22:16:37.904228084Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-07-07T22:16:37.904650921Z STATEMENT:  SELECT *
+2026-07-07T22:16:37.904663872Z 	                                   FROM ir_cron
+2026-07-07T22:16:37.904669221Z 	                                   WHERE numbercall != 0
+2026-07-07T22:16:37.904673421Z 	                                      AND active
+2026-07-07T22:16:37.904677381Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-07-07T22:16:37.904681381Z 	                                      AND id=1
+2026-07-07T22:16:37.904685281Z 	                                   FOR UPDATE NOWAIT
+2026-07-09T02:46:24.500609312Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-07-09T02:46:24.500678862Z STATEMENT:  SELECT *
+2026-07-09T02:46:24.500685462Z 	                                   FROM ir_cron
+2026-07-09T02:46:24.500690852Z 	                                   WHERE numbercall != 0
+2026-07-09T02:46:24.500695732Z 	                                      AND active
+2026-07-09T02:46:24.500700332Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-07-09T02:46:24.500704901Z 	                                      AND id=1
+2026-07-09T02:46:24.500709491Z 	                                   FOR UPDATE NOWAIT
+2026-07-22T06:19:15.270961132Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-07-22T06:19:15.273263998Z STATEMENT:  SELECT *
+2026-07-22T06:19:15.273282567Z 	                                   FROM ir_cron
+2026-07-22T06:19:15.273290107Z 	                                   WHERE numbercall != 0
+2026-07-22T06:19:15.273296418Z 	                                      AND active
+2026-07-22T06:19:15.273302638Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-07-22T06:19:15.273308818Z 	                                      AND id=2
+2026-07-22T06:19:15.273314847Z 	                                   FOR UPDATE NOWAIT
+2026-08-09T03:47:03.350693933Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-08-09T03:47:03.351036816Z STATEMENT:  SELECT *
+2026-08-09T03:47:03.351044210Z 	                                   FROM ir_cron
+2026-08-09T03:47:03.351047997Z 	                                   WHERE numbercall != 0
+2026-08-09T03:47:03.351061383Z 	                                      AND active
+2026-08-09T03:47:03.351064228Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-08-09T03:47:03.351067233Z 	                                      AND id=1
+2026-08-09T03:47:03.351070118Z 	                                   FOR UPDATE NOWAIT
+2026-08-12T16:16:23.108396394Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-08-12T16:16:23.108916854Z STATEMENT:  SELECT *
+2026-08-12T16:16:23.108931482Z 	                                   FROM ir_cron
+2026-08-12T16:16:23.108937934Z 	                                   WHERE numbercall != 0
+2026-08-12T16:16:23.108943485Z 	                                      AND active
+2026-08-12T16:16:23.108948785Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-08-12T16:16:23.108955237Z 	                                      AND id=1
+2026-08-12T16:16:23.108961409Z 	                                   FOR UPDATE NOWAIT
+2026-08-16T05:46:48.430350581Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-08-16T05:46:48.430721066Z STATEMENT:  SELECT *
+2026-08-16T05:46:48.430736817Z 	                                   FROM ir_cron
+2026-08-16T05:46:48.430743840Z 	                                   WHERE numbercall != 0
+2026-08-16T05:46:48.430749360Z 	                                      AND active
+2026-08-16T05:46:48.430754760Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-08-16T05:46:48.430760612Z 	                                      AND id=1
+2026-08-16T05:46:48.430765881Z 	                                   FOR UPDATE NOWAIT
+2026-09-09T03:47:21.307319666Z ERROR:  could not obtain lock on row in relation "ir_cron"
+2026-09-09T03:47:21.307834966Z STATEMENT:  SELECT *
+2026-09-09T03:47:21.307848862Z 	                                   FROM ir_cron
+2026-09-09T03:47:21.307855836Z 	                                   WHERE numbercall != 0
+2026-09-09T03:47:21.307861677Z 	                                      AND active
+2026-09-09T03:47:21.307867959Z 	                                      AND nextcall <= (now() at time zone 'UTC')
+2026-09-09T03:47:21.307874050Z 	                                      AND id=1
+2026-09-09T03:47:21.307879862Z 	                                   FOR UPDATE NOWAIT
+2026-09-17T02:13:35.688878149Z ERROR:  syntax error at or near "\" at character 180
+2026-09-17T02:13:35.689001133Z STATEMENT:  select current_database(), p.proname, l.lanname, p.probin from pg_proc p join pg_language l on l.oid=p.prolang join pg_namespace n on n.oid=p.pronamespace where n.nspname not in (\x27pg_catalog\x27,\x27information_schema\x27) and l.lanname not in (\x27sql\x27,\x27plpgsql\x27)
+2026-09-17T02:13:36.036041768Z ERROR:  syntax error at or near "\" at character 180
+2026-09-17T02:13:36.036088016Z STATEMENT:  select current_database(), p.proname, l.lanname, p.probin from pg_proc p join pg_language l on l.oid=p.prolang join pg_namespace n on n.oid=p.pronamespace where n.nspname not in (\x27pg_catalog\x27,\x27information_schema\x27) and l.lanname not in (\x27sql\x27,\x27plpgsql\x27)
+2026-09-17T02:13:36.375069119Z ERROR:  syntax error at or near "\" at character 180
+2026-09-17T02:13:36.375098565Z STATEMENT:  select current_database(), p.proname, l.lanname, p.probin from pg_proc p join pg_language l on l.oid=p.prolang join pg_namespace n on n.oid=p.pronamespace where n.nspname not in (\x27pg_catalog\x27,\x27information_schema\x27) and l.lanname not in (\x27sql\x27,\x27plpgsql\x27)
+2026-09-17T02:15:08.249180593Z ERROR:  column "waiting" does not exist at character 30
+2026-09-17T02:15:08.249241369Z STATEMENT:  select pid,state,query_start,waiting,now()-query_start from pg_stat_activity where datname=current_database() and pid<>pg_backend_pid() order by query_start limit 5

@@ -1,0 +1,21 @@
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           392M  1.3M  391M   1% /run
+/dev/vda1        77G   11G   66G  15% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           2.0G     0  2.0G   0% /tmp
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-udev-load-credentials.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-sysctl.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-tmpfiles-setup-dev-early.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-tmpfiles-setup-dev.service
+/dev/vda13      989M  115M  808M  13% /boot
+/dev/vda15      105M  6.1M   99M   6% /boot/efi
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-tmpfiles-setup.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-networkd.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/serial-getty@ttyS0.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+overlay          77G   11G   66G  15% /var/lib/docker/overlay2/c35d8a963bd1a84bf1515bbbe50eb0083cb0726d50e2fb76badc4e8d10b7c594/merged
+overlay          77G   11G   66G  15% /var/lib/docker/overlay2/1ec94265c4330209a0a77723f490cee25823da81d8f322d55786b380e1948c29/merged
+tmpfs           392M   12K  392M   1% /run/user/0

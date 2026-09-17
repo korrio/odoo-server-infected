@@ -1,0 +1,2 @@
+lrwxrwxrwx 1 999 systemd-journal 0 Sep 17 02:18 /proc/164475/cwd -> /var/lib/postgresql/data
+lrwxrwxrwx 1 999 systemd-journal 0 Sep 17 02:18 /proc/164475/exe -> /var/tmp/.wpmocdevxz/xbbqewcner

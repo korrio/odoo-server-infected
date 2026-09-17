@@ -1,0 +1,61 @@
+Name:	mgqipgiuvp
+Umask:	0077
+State:	S (sleeping)
+Tgid:	2693213
+Ngid:	0
+Pid:	2693213
+PPid:	164475
+TracerPid:	0
+Uid:	999	999	999	999
+Gid:	999	999	999	999
+FDSize:	256
+Groups:	101 
+NStgid:	2693213	403178
+NSpid:	2693213	403178
+NSpgid:	2693213	403178
+NSsid:	2693213	403178
+Kthread:	0
+VmPeak:	 2440888 kB
+VmSize:	 2440752 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	 2404480 kB
+VmRSS:	 2404348 kB
+RssAnon:	 2404348 kB
+RssFile:	       0 kB
+RssShmem:	       0 kB
+VmData:	 2433880 kB
+VmStk:	     132 kB
+VmExe:	    2084 kB
+VmLib:	    3104 kB
+VmPTE:	    4768 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffffff
+Threads:	8
+SigQ:	268/15517
+SigPnd:	0000000000000000
+ShdPnd:	0000000000010000
+SigBlk:	fffffffc3ff9fa07
+SigIgn:	0000000001303000
+SigCgt:	000000000000460b
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	00000000a80425fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	thread vulnerable
+SpeculationIndirectBranch:	conditional enabled
+Cpus_allowed:	3
+Cpus_allowed_list:	0-1
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	19240
+nonvoluntary_ctxt_switches:	60
+x86_Thread_features:	
+x86_Thread_features_locked:	

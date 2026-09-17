@@ -1,0 +1,31 @@
+version: '2.1'
+services:
+  db:
+    image: postgres:9.6
+    container_name: odoo-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=<REDACTED>
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    networks:
+      - odoo-internal
+
+  odoo:
+    image: akolpakov/odoo:7
+    container_name: odoo
+    restart: unless-stopped
+    ports:
+      - "8069:8069"
+    depends_on:
+      - db
+    volumes:
+      - ./addons:/mnt/extra-addons/
+      - ./odoo_data:/var/lib/odoo/
+    networks:
+      - odoo-internal
+
+networks:
+  odoo-internal:
+    driver: bridge

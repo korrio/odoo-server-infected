@@ -1,0 +1,50 @@
+-rw------- 1 postgres postgres    0 2026-05-01 22:57:53.064798481 +0000 /var/tmp/.lckktfdd
+
+/tmp:
+total 8
+drwxrwxrwt 1 root root 4096 2022-02-12 01:04:21.000000000 +0000 .
+drwxr-xr-x 1 root root 4096 2026-05-01 22:57:50.542832755 +0000 ..
+
+/var/tmp:
+total 20
+drwxrwxrwt 1 root     root     4096 2026-09-17 00:30:36.693788731 +0000 .
+drwxr-xr-x 1 root     root     4096 2022-01-25 00:00:00.000000000 +0000 ..
+-rw------- 1 postgres postgres    0 2026-05-01 22:57:53.064798481 +0000 .lckktfdd
+drwx------ 2 postgres postgres 4096 2026-05-01 22:57:53.065798468 +0000 .wpmocdevxz
+drwx------ 2 postgres postgres 4096 2026-09-17 00:30:36.694788760 +0000 .ytagwyaegn
+
+/var/tmp/.:
+total 20
+drwxrwxrwt 1 root     root     4096 2026-09-17 00:30:36.693788731 +0000 .
+drwxr-xr-x 1 root     root     4096 2022-01-25 00:00:00.000000000 +0000 ..
+-rw------- 1 postgres postgres    0 2026-05-01 22:57:53.064798481 +0000 .lckktfdd
+drwx------ 2 postgres postgres 4096 2026-05-01 22:57:53.065798468 +0000 .wpmocdevxz
+drwx------ 2 postgres postgres 4096 2026-09-17 00:30:36.694788760 +0000 .ytagwyaegn
+
+/var/tmp/..:
+total 48
+drwxr-xr-x 1 root root  4096 2022-01-25 00:00:00.000000000 +0000 .
+drwxr-xr-x 1 root root  4096 2026-05-01 22:57:50.542832755 +0000 ..
+drwxr-xr-x 2 root root  4096 2020-07-10 21:05:00.000000000 +0000 backups
+drwxr-xr-x 1 root root  4096 2022-02-12 01:04:14.000000000 +0000 cache
+drwxr-xr-x 1 root root  4096 2022-02-12 01:04:13.000000000 +0000 lib
+drwxrwsr-x 2 root staff 4096 2020-07-10 21:05:00.000000000 +0000 local
+lrwxrwxrwx 1 root root     9 2022-01-25 00:00:00.000000000 +0000 lock -> /run/lock
+drwxr-xr-x 1 root root  4096 2022-02-12 01:04:13.000000000 +0000 log
+drwxrwsr-x 2 root mail  4096 2022-01-25 00:00:00.000000000 +0000 mail
+drwxr-xr-x 2 root root  4096 2022-01-25 00:00:00.000000000 +0000 opt
+lrwxrwxrwx 1 root root     4 2022-01-25 00:00:00.000000000 +0000 run -> /run
+drwxr-xr-x 2 root root  4096 2022-01-25 00:00:00.000000000 +0000 spool
+drwxrwxrwt 1 root root  4096 2026-09-17 00:30:36.693788731 +0000 tmp
+
+/var/tmp/.wpmocdevxz:
+total 812
+drwx------ 2 postgres postgres   4096 2026-05-01 22:57:53.065798468 +0000 .
+drwxrwxrwt 1 root     root       4096 2026-09-17 00:30:36.693788731 +0000 ..
+-rwx------ 1 postgres postgres 821952 2026-05-01 22:57:53.065798468 +0000 xbbqewcner
+
+/var/tmp/.ytagwyaegn:
+total 2092
+drwx------ 2 postgres postgres    4096 2026-09-17 00:30:36.694788760 +0000 .
+drwxrwxrwt 1 root     root        4096 2026-09-17 00:30:36.693788731 +0000 ..
+-rwx------ 1 postgres postgres 2131312 2026-09-17 00:30:36.694788760 +0000 mgqipgiuvp

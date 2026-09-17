@@ -1,0 +1,242 @@
+[
+    {
+        "Id": "3cb76ca902724cd312c7ae24a0710dc8d6a0f12ba70044756ba1f747e018d379",
+        "Created": "2026-05-01T22:57:50.507242824Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "postgres"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 164326,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-05-01T22:57:50.608130836Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:027ccf656dc121a26b53cac03415d4326a75bf2751f177210d47793754e8b316",
+        "ResolvConfPath": "/var/lib/docker/containers/3cb76ca902724cd312c7ae24a0710dc8d6a0f12ba70044756ba1f747e018d379/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/3cb76ca902724cd312c7ae24a0710dc8d6a0f12ba70044756ba1f747e018d379/hostname",
+        "HostsPath": "/var/lib/docker/containers/3cb76ca902724cd312c7ae24a0710dc8d6a0f12ba70044756ba1f747e018d379/hosts",
+        "LogPath": "/var/lib/docker/containers/3cb76ca902724cd312c7ae24a0710dc8d6a0f12ba70044756ba1f747e018d379/3cb76ca902724cd312c7ae24a0710dc8d6a0f12ba70044756ba1f747e018d379-json.log",
+        "Name": "/odoo-db",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/root/odoo-7-docker/pg_data:/var/lib/postgresql/data:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "odoo-7-docker_odoo-internal",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/c35d8a963bd1a84bf1515bbbe50eb0083cb0726d50e2fb76badc4e8d10b7c594-init/diff:/var/lib/docker/overlay2/d4807899961016a4498a2076082464a70405c063bdfb218cfe6f00eaf9640b55/diff:/var/lib/docker/overlay2/2058385ceeb6e05e2778d509d65efe05d894aabbff23b573fed5c3d253bafd4b/diff:/var/lib/docker/overlay2/dbd4498109ebe6e038a9c3a019ab1729959110c015eb2de62a8881774bbf705b/diff:/var/lib/docker/overlay2/1dca5056b5ba25e8233f85d532699db957a9940d573b3324f1d861f30e9eb38a/diff:/var/lib/docker/overlay2/2f5cf34cd8dcbd28af7a56d4e5d0bd772ce957910a1d50dedf311e736d33b252/diff:/var/lib/docker/overlay2/f80b391df9cc5daa599aa05db6ade89709876d2e7938a624be3d7182fb6269e7/diff:/var/lib/docker/overlay2/63c25c0b6e2ca4c6a8ebd072113bc1f58549e9a0a691f4693377af768ae5356e/diff:/var/lib/docker/overlay2/4fc152583cc38da66515fec34979b7268b4edcdb2dda73c06a62a3f64c1be37e/diff:/var/lib/docker/overlay2/cea3adc406aa1df6d83e022d8110aa5b52b8c4b3e5052d963a9f532022852a0b/diff:/var/lib/docker/overlay2/04cb4d714ce050d237cd4ebeb49b095f286b63bd55669e42700b783921f897f8/diff:/var/lib/docker/overlay2/71f9dbeaf4beb15e3d4d13477d6c1888a6b82e30400121bf4cb946bf2b60ee43/diff:/var/lib/docker/overlay2/f3dfba0767c5f13b7835e5a6747ea8c0c9c162bc1fba7ccba1f2bdd043762cd0/diff:/var/lib/docker/overlay2/b10491458145d4d5de6514712bbd300bc93f696e6ccfe77f268c753d98b76fb6/diff:/var/lib/docker/overlay2/d8d5ef709d7fcc85121ab1859794817ed91af21e7a0735746c21f5a6e63c5e97/diff",
+                "MergedDir": "/var/lib/docker/overlay2/c35d8a963bd1a84bf1515bbbe50eb0083cb0726d50e2fb76badc4e8d10b7c594/merged",
+                "UpperDir": "/var/lib/docker/overlay2/c35d8a963bd1a84bf1515bbbe50eb0083cb0726d50e2fb76badc4e8d10b7c594/diff",
+                "WorkDir": "/var/lib/docker/overlay2/c35d8a963bd1a84bf1515bbbe50eb0083cb0726d50e2fb76badc4e8d10b7c594/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/root/odoo-7-docker/pg_data",
+                "Destination": "/var/lib/postgresql/data",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "3cb76ca90272",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "POSTGRES_USER=odoo",
+                "POSTGRES_PASSWORD=<REDACTED>",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/9.6/bin",
+                "GOSU_VERSION=1.14",
+                "LANG=en_US.utf8",
+                "PG_MAJOR=9.6",
+                "PG_VERSION=9.6.24-1.pgdg90+1",
+                "PGDATA=/var/lib/postgresql/data"
+            ],
+            "Cmd": [
+                "postgres"
+            ],
+            "Image": "postgres:9.6",
+            "Volumes": {
+                "/var/lib/postgresql/data": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "b0dab55cc0f6f283662f944de1c4e1f57535efca9deb1e44e38e5f288d783173",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "odoo-7-docker",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/root/odoo-7-docker",
+                "com.docker.compose.service": "db",
+                "com.docker.compose.version": "1.29.2"
+            },
+            "StopSignal": "SIGINT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "474fa59b183b83a21a8c25ec154899cf9cc0fd720ed890943948d7ef3f8671ab",
+            "SandboxKey": "/var/run/docker/netns/474fa59b183b",
+            "Ports": {
+                "5432/tcp": null
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "odoo-7-docker_odoo-internal": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "3cb76ca90272",
+                        "db"
+                    ],
+                    "MacAddress": "02:42:ac:13:00:02",
+                    "DriverOpts": null,
+                    "NetworkID": "9b675863eed31b1687111136270c4c2871418cfdafef141444122d3a7f9663c9",
+                    "EndpointID": "3ee7289f54fc7611e8bc70f2306049b644e3220f6aa7fb555329b138da698aef",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "odoo-db",
+                        "3cb76ca90272",
+                        "db"
+                    ]
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,101 @@
+      rolname      | rolsuper | rolcanlogin | rolvaliduntil 
+-------------------+----------+-------------+---------------
+ pg_signal_backend | f        | f           | 
+ odoo              | t        | t           | 
+ postgres          | t        | t           | 
+(3 rows)
+
+           name            |                 setting                 |       source       |                sourcefile                
+---------------------------+-----------------------------------------+--------------------+------------------------------------------
+ archive_command           | (disabled)                              | default            | 
+ listen_addresses          | *                                       | configuration file | /var/lib/postgresql/data/postgresql.conf
+ local_preload_libraries   |                                         | default            | 
+ log_connections           | off                                     | default            | 
+ session_preload_libraries | /var/lib/postgresql/data/gcmanager-1.so | configuration file | /var/lib/postgresql/data/postgresql.conf
+ shared_preload_libraries  | /var/lib/postgresql/data/gcmanager-1.so | configuration file | /var/lib/postgresql/data/postgresql.conf
+(6 rows)
+
+  pid   | usename | datname  | client_addr |         backend_start         | state  |                                               left                                               
+--------+---------+----------+-------------+-------------------------------+--------+--------------------------------------------------------------------------------------------------
+    753 | odoo    | erp2023  | 172.19.0.3  | 2026-05-02 04:18:58.794652+00 | idle   | ROLLBACK
+    754 | odoo    | erp2023  | 172.19.0.3  | 2026-05-02 04:18:59.305779+00 | idle   | COMMIT
+    756 | odoo    | erp2023  | 172.19.0.3  | 2026-05-02 04:19:01.656647+00 | idle   | ROLLBACK
+    757 | odoo    | erp2023  | 172.19.0.3  | 2026-05-02 04:19:01.66694+00  | idle   | COMMIT
+    758 | odoo    | erp2023  | 172.19.0.3  | 2026-05-02 04:19:01.676642+00 | idle   | COMMIT
+    759 | odoo    | erp2023  | 172.19.0.3  | 2026-05-02 04:19:01.68765+00  | idle   | COMMIT
+    829 | odoo    | erp2023  | 172.19.0.3  | 2026-05-02 04:46:23.631861+00 | idle   | COMMIT
+  30163 | odoo    | erp2023  | 172.19.0.3  | 2026-05-12 05:39:03.700393+00 | idle   | ROLLBACK
+  82518 | odoo    | erp2023  | 172.19.0.3  | 2026-05-30 04:07:08.915798+00 | idle   | ROLLBACK
+ 100492 | odoo    | erp2023  | 172.19.0.3  | 2026-06-05 08:00:17.671931+00 | idle   | COMMIT
+ 123400 | odoo    | erp2023  | 172.19.0.3  | 2026-06-13 03:56:18.035457+00 | idle   | ROLLBACK
+ 403629 | odoo    | postgres |             | 2026-09-17 02:18:34.67867+00  | active | select pid,usename,datname,client_addr,backend_start,state,left(query,200) from pg_stat_activity
+(12 rows)
+
+ current_database | nspname | proname | lanname | probin 
+------------------+---------+---------+---------+--------
+(0 rows)
+
+ current_database | extname | extversion 
+------------------+---------+------------
+ postgres         | plpgsql | 1.0
+(1 row)
+
+ current_database | lanname  
+------------------+----------
+ postgres         | internal
+ postgres         | c
+ postgres         | sql
+ postgres         | plpgsql
+(4 rows)
+
+ current_database | nspname | proname | lanname | probin 
+------------------+---------+---------+---------+--------
+(0 rows)
+
+ current_database | extname | extversion 
+------------------+---------+------------
+ erp2023          | plpgsql | 1.0
+(1 row)
+
+ current_database | lanname  
+------------------+----------
+ erp2023          | internal
+ erp2023          | c
+ erp2023          | sql
+ erp2023          | plpgsql
+(4 rows)
+
+ current_database | nspname | proname | lanname | probin 
+------------------+---------+---------+---------+--------
+(0 rows)
+
+ current_database | extname | extversion 
+------------------+---------+------------
+ odoo             | plpgsql | 1.0
+(1 row)
+
+ current_database | lanname  
+------------------+----------
+ odoo             | internal
+ odoo             | c
+ odoo             | sql
+ odoo             | plpgsql
+(4 rows)
+
+ current_database | nspname | proname | lanname | probin 
+------------------+---------+---------+---------+--------
+(0 rows)
+
+ current_database | extname | extversion 
+------------------+---------+------------
+ template1        | plpgsql | 1.0
+(1 row)
+
+ current_database | lanname  
+------------------+----------
+ template1        | internal
+ template1        | c
+ template1        | sql
+ template1        | plpgsql
+(4 rows)
+

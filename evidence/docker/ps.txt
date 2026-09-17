@@ -1,0 +1,3 @@
+CONTAINER ID   IMAGE              COMMAND                  CREATED        STATUS        PORTS                                                 NAMES
+4f17db020949   akolpakov/odoo:7   "/entrypoint.sh open…"   4 months ago   Up 4 months   0.0.0.0:8069->8069/tcp, :::8069->8069/tcp, 8071/tcp   odoo
+3cb76ca90272   postgres:9.6       "docker-entrypoint.s…"   4 months ago   Up 4 months   5432/tcp                                              odoo-db

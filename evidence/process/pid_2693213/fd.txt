@@ -1,0 +1,23 @@
+total 0
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 0 -> /dev/null
+l-wx------ 1 999 systemd-journal 64 Sep 17 02:12 1 -> pipe:[1302760]
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 10 -> socket:[1303006]
+lr-x------ 1 999 systemd-journal 64 Sep 17 02:12 11 -> /
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 12 -> anon_inode:[eventpoll]
+lr-x------ 1 999 systemd-journal 64 Sep 17 02:12 13 -> pipe:[20311479]
+l-wx------ 1 999 systemd-journal 64 Sep 17 02:12 14 -> pipe:[20311479]
+lr-x------ 1 999 systemd-journal 64 Sep 17 02:12 15 -> pipe:[20311480]
+l-wx------ 1 999 systemd-journal 64 Sep 17 02:12 16 -> pipe:[20311480]
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 17 -> anon_inode:[eventfd]
+lr-x------ 1 999 systemd-journal 64 Sep 17 02:12 18 -> /dev/null
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 19 -> anon_inode:[eventfd]
+l-wx------ 1 999 systemd-journal 64 Sep 17 02:12 2 -> pipe:[1302761]
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 20 -> anon_inode:[eventfd]
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 21 -> socket:[20315129]
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 3 -> socket:[1302902]
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 4 -> socket:[1302903]
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 5 -> socket:[1302904]
+lr-x------ 1 999 systemd-journal 64 Sep 17 02:12 6 -> pipe:[1302906]
+l-wx------ 1 999 systemd-journal 64 Sep 17 02:12 7 -> pipe:[1302906]
+lrwx------ 1 999 systemd-journal 64 Sep 17 02:12 8 -> socket:[1302912]
+l-wx------ 1 999 systemd-journal 64 Sep 17 02:12 9 -> /var/tmp/.lckktfdd

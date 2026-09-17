@@ -1,0 +1,44 @@
+/root/odoo-7-docker:
+total 48
+drwxr-xr-x  7 root root 4096 2026-05-02 00:21:04.838434368 +0000 .
+drwx------  8 root root 4096 2026-09-17 02:18:25.149749152 +0000 ..
+-rw-r--r--  1 root root 2084 2024-11-02 01:48:20.672075604 +0000 Dockerfile
+drwxr-xr-x  2 root root 4096 2024-11-02 03:05:50.857442534 +0000 addons
+-rw-r--r--  1 root root  593 2026-05-01 22:57:01.752503614 +0000 docker-compose.yml
+-rw-r--r--  1 root root  510 2026-05-01 22:53:41.713437759 +0000 docker-compose.yml.bak.1777676021
+-rw-r--r--  1 root root 1074 2024-11-02 01:48:21.463085423 +0000 entrypoint.sh
+drwxr-xr-x  2 root root 4096 2024-11-02 01:48:20.699075951 +0000 odoo_data
+-rw-r--r--  1 root root 1144 2025-09-01 10:58:16.565804584 +0000 openerp-server.conf
+drwx------ 19  999 root 4096 2026-05-01 22:57:51.052825820 +0000 pg_data
+drwx------ 13  999 root 4096 2024-11-02 01:51:23.692682301 +0000 pg_data_9.1
+drwx------ 15  999 root 4096 2024-11-02 02:02:19.320135893 +0000 pg_data_9.3
+
+/root/odoo-7-docker/pg_data:
+total 684
+drwx------ 19  999 root              4096 2026-05-01 22:57:51.052825820 +0000 .
+drwxr-xr-x  7 root root              4096 2026-05-02 00:21:04.838434368 +0000 ..
+-rw-------  1  999 systemd-journal      4 2024-11-02 02:05:04.583161849 +0000 PG_VERSION
+drwx------  8  999 systemd-journal   4096 2024-12-21 09:19:23.978080981 +0000 base
+-rw-r--r--  1  999 systemd-journal 565920 2026-05-01 11:52:12.942079454 +0000 gcmanager-1.so
+drwx------  2  999 systemd-journal   4096 2026-09-17 02:13:36.371738467 +0000 global
+drwx------  2  999 systemd-journal   4096 2024-12-21 07:43:56.831144215 +0000 pg_clog
+drwx------  2  999 systemd-journal   4096 2024-12-21 09:59:35.186110804 +0000 pg_commit_ts
+drwx------  2  999 systemd-journal   4096 2024-12-21 09:05:20.192685845 +0000 pg_dynshmem
+-rw-------  1  999 systemd-journal   4478 2024-11-02 02:05:06.287171134 +0000 pg_hba.conf
+-rw-------  1  999 systemd-journal   1636 2024-11-02 02:05:04.713162565 +0000 pg_ident.conf
+drwx------  4  999 systemd-journal   4096 2024-12-21 09:56:34.338096359 +0000 pg_logical
+drwx------  4  999 systemd-journal   4096 2024-12-21 09:48:32.001379587 +0000 pg_multixact
+drwx------  2  999 systemd-journal   4096 2026-05-01 22:57:51.082825413 +0000 pg_notify
+drwx------  2  999 systemd-journal   4096 2024-12-21 09:45:31.177847542 +0000 pg_replslot
+drwx------  2  999 systemd-journal   4096 2024-12-21 09:51:32.859903145 +0000 pg_serial
+drwx------  2  999 systemd-journal   4096 2024-12-21 09:34:28.034390986 +0000 pg_snapshots
+drwx------  2  999 systemd-journal   4096 2026-05-01 22:57:51.113824991 +0000 pg_stat
+drwx------  2  999 systemd-journal   4096 2026-09-17 02:18:20.180640397 +0000 pg_stat_tmp
+drwx------  2  999 systemd-journal   4096 2025-12-11 08:44:41.525009441 +0000 pg_subtrans
+drwx------  2  999 systemd-journal   4096 2024-12-21 09:02:19.275707505 +0000 pg_tblspc
+drwx------  2  999 systemd-journal   4096 2024-12-21 09:52:33.145742715 +0000 pg_twophase
+drwx------  3  999 systemd-journal   4096 2026-09-15 03:58:06.703757448 +0000 pg_xlog
+-rw-------  1  999 systemd-journal     88 2024-11-02 02:05:04.712162560 +0000 postgresql.auto.conf
+-rw-------  1  999 systemd-journal  22678 2026-02-25 19:05:42.982563891 +0000 postgresql.conf
+-rw-------  1  999 systemd-journal     37 2026-05-01 22:57:51.096825223 +0000 postmaster.opts
+-rw-------  1  999 systemd-journal     85 2026-05-01 22:57:51.061825698 +0000 postmaster.pid
